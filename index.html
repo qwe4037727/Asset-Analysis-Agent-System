@@ -297,6 +297,31 @@
             color: #FF6B8A !important;
         }
 
+        /* 资源市场状态样式 - 确保内联样式不被覆盖 */
+        .installed-status {
+            color: #34C759 !important;
+        }
+
+        .disabled-status {
+            color: #FF6B8A !important;
+        }
+
+        /* 资源市场状态切换按钮样式 */
+        span[style*="color: #34C759"],
+        span[style*="color:#34C759"] {
+            color: #34C759 !important;
+        }
+
+        span[style*="color: #FF6B8A"],
+        span[style*="color:#FF6B8A"] {
+            color: #FF6B8A !important;
+        }
+
+        span[style*="color: #3370FF"],
+        span[style*="color:#3370FF"] {
+            color: #3370FF !important;
+        }
+
         .text-blue-400 {
             color: #5B8DEF !important;
         }
@@ -841,7 +866,7 @@
                     </div>
                 </div>
 
-                <button class="w-full mt-6 py-3 rounded-xl text-white font-medium" style="background: linear-gradient(135deg, #3370FF 0%, #2B5FD9 100%);">
+                <button onclick="showSuccessToast('企业信息已更新')" class="w-full mt-6 py-3 rounded-xl text-white font-medium" style="background: linear-gradient(135deg, #3370FF 0%, #2B5FD9 100%);">
                     <i class="fas fa-edit mr-2"></i>编辑企业信息
                 </button>
             </div>
@@ -856,7 +881,7 @@
                     </button>
                     <span class="text-base font-semibold ml-3" style="color: #1D2129;">团队管理</span>
                 </div>
-                <button class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: #EBF1FF; color: #3370FF;">
+                <button onclick="showSuccessToast('邀请已发送')" class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: #EBF1FF; color: #3370FF;">
                     <i class="fas fa-plus mr-1"></i>邀请
                 </button>
             </div>
@@ -973,7 +998,7 @@
                         <div class="flex items-center justify-between mb-3">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">生产环境密钥</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">创建于 2024-05-15</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">创建于 2026-05-15</p>
                             </div>
                             <span class="text-xs px-2 py-1 rounded-full" style="background: #E8F9EE; color: #34C759;">活跃</span>
                         </div>
@@ -992,7 +1017,7 @@
                         <div class="flex items-center justify-between mb-3">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">测试环境密钥</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">创建于 2024-06-01</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">创建于 2026-06-01</p>
                             </div>
                             <span class="text-xs px-2 py-1 rounded-full" style="background: #E8F9EE; color: #34C759;">活跃</span>
                         </div>
@@ -1046,7 +1071,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">智能分析调用</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">2024-06-03 14:30</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">2026-06-03 14:30</p>
                             </div>
                             <span class="text-sm font-medium" style="color: #E11D48;">- ¥ 2.50</span>
                         </div>
@@ -1056,7 +1081,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">知识库查询</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">2024-06-03 10:15</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">2026-06-03 10:15</p>
                             </div>
                             <span class="text-sm font-medium" style="color: #E11D48;">- ¥ 1.80</span>
                         </div>
@@ -1066,7 +1091,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">账户充值</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">2024-06-01 09:00</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">2026-06-01 09:00</p>
                             </div>
                             <span class="text-sm font-medium" style="color: #34C759;">+ ¥ 500.00</span>
                         </div>
@@ -1076,7 +1101,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">智能分析调用</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">2024-05-31 16:45</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">2026-05-31 16:45</p>
                             </div>
                             <span class="text-sm font-medium" style="color: #E11D48;">- ¥ 3.20</span>
                         </div>
@@ -1086,7 +1111,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-sm font-medium" style="color: #1D2129;">技能插件调用</p>
-                                <p class="text-xs mt-1" style="color: #86909C;">2024-05-30 11:20</p>
+                                <p class="text-xs mt-1" style="color: #86909C;">2026-05-30 11:20</p>
                             </div>
                             <span class="text-sm font-medium" style="color: #E11D48;">- ¥ 1.50</span>
                         </div>
@@ -1140,7 +1165,7 @@
                     </div>
                     <div>
                         <h4 id="detailName" class="font-medium text-white text-lg">-</h4>
-                        <p class="text-xs text-dark-400 mt-1">创建于 2024-05-15</p>
+                        <p class="text-xs text-dark-400 mt-1">创建于 2026-05-15</p>
                     </div>
                 </div>
 
@@ -1211,6 +1236,28 @@
                     取消
                 </button>
                 <button onclick="confirmDelete()" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-medium rounded-xl py-3 px-4 transition-all duration-200">
+                    确认删除
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 资源删除确认弹窗 -->
+    <div id="resourceDeleteModal" class="fixed inset-0 z-[110] hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeResourceDeleteModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm glass-card rounded-2xl p-6">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
+                    <i class="fas fa-trash-alt text-red-400 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">确认删除</h3>
+                <p id="resourceDeleteMessage" class="text-sm text-dark-400">确定要删除该资源吗？</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="closeResourceDeleteModal()" class="flex-1 glass-card text-white font-medium rounded-xl py-3 px-4 hover:border-primary-500/40 transition-all duration-300">
+                    取消
+                </button>
+                <button onclick="confirmResourceDelete()" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-medium rounded-xl py-3 px-4 transition-all duration-200">
                     确认删除
                 </button>
             </div>
@@ -1985,7 +2032,7 @@
                                 <input type="checkbox" class="checkbox-custom" checked>
                                 <div class="flex-1">
                                     <p class="text-sm text-white">集团全量固定资产清单</p>
-                                    <p class="text-xs text-dark-500 mt-1">12,580 条记录 · 更新于 2024-06-01</p>
+                                    <p class="text-xs text-dark-500 mt-1">12,580 条记录 · 更新于 2026-06-01</p>
                                 </div>
                             </label>
                         </div>
@@ -1994,7 +2041,7 @@
                                 <input type="checkbox" class="checkbox-custom" checked>
                                 <div class="flex-1">
                                     <p class="text-sm text-white">土地使用权台账</p>
-                                    <p class="text-xs text-dark-500 mt-1">3,256 条记录 · 更新于 2024-05-28</p>
+                                    <p class="text-xs text-dark-500 mt-1">3,256 条记录 · 更新于 2026-05-28</p>
                                 </div>
                             </label>
                         </div>
@@ -2003,7 +2050,7 @@
                                 <input type="checkbox" class="checkbox-custom" checked>
                                 <div class="flex-1">
                                     <p class="text-sm text-white">公租房/配套用房使用台账</p>
-                                    <p class="text-xs text-dark-500 mt-1">1,892 条记录 · 更新于 2024-05-25</p>
+                                    <p class="text-xs text-dark-500 mt-1">1,892 条记录 · 更新于 2026-05-25</p>
                                 </div>
                             </label>
                         </div>
@@ -2012,7 +2059,7 @@
                                 <input type="checkbox" class="checkbox-custom" checked>
                                 <div class="flex-1">
                                     <p class="text-sm text-white">资产折旧台账</p>
-                                    <p class="text-xs text-dark-500 mt-1">8,456 条记录 · 更新于 2024-06-01</p>
+                                    <p class="text-xs text-dark-500 mt-1">8,456 条记录 · 更新于 2026-06-01</p>
                                 </div>
                             </label>
                         </div>
@@ -2021,7 +2068,7 @@
                                 <input type="checkbox" class="checkbox-custom" checked>
                                 <div class="flex-1">
                                     <p class="text-sm text-white">历年资产处置记录</p>
-                                    <p class="text-xs text-dark-500 mt-1">2,145 条记录 · 更新于 2024-05-20</p>
+                                    <p class="text-xs text-dark-500 mt-1">2,145 条记录 · 更新于 2026-05-20</p>
                                 </div>
                             </label>
                         </div>
@@ -2406,7 +2453,7 @@
                             <ul class="text-sm text-dark-300 space-y-1">
                                 <li>• 《国有企业资产处置管理办法》第12条</li>
                                 <li>• 《行政事业性国有资产管理条例》第28条</li>
-                                <li>• 省国资委2024年资产处置指导意见</li>
+                                <li>• 省国资委2026年资产处置指导意见</li>
                             </ul>
                         </div>
 
@@ -2425,10 +2472,10 @@
                                         <span class="text-xs font-medium text-emerald-300">知识库来源</span>
                                     </div>
                                     <div class="space-y-1 text-xs text-dark-400">
-                                        <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 156 条 · 更新于 2024-06-01)</span></p>
-                                        <p>• 土地使用权台账 <span class="text-dark-500">(调用 89 条 · 更新于 2024-05-28)</span></p>
-                                        <p>• 全国资产价值浮动行情 <span class="text-dark-500">(调用 120 条 · 更新于 2024-06-03)</span></p>
-                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 45 条 · 更新于 2024-06-03)</span></p>
+                                        <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 156 条 · 更新于 2026-06-01)</span></p>
+                                        <p>• 土地使用权台账 <span class="text-dark-500">(调用 89 条 · 更新于 2026-05-28)</span></p>
+                                        <p>• 全国资产价值浮动行情 <span class="text-dark-500">(调用 120 条 · 更新于 2026-06-03)</span></p>
+                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 45 条 · 更新于 2026-06-03)</span></p>
                                     </div>
                                 </div>
 
@@ -2534,9 +2581,9 @@
                                         <span class="text-xs font-medium text-emerald-300">知识库来源</span>
                                     </div>
                                     <div class="space-y-1 text-xs text-dark-400">
-                                        <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 156 条 · 更新于 2024-06-01)</span></p>
-                                        <p>• 历年资产处置记录 <span class="text-dark-500">(调用 89 条 · 更新于 2024-05-20)</span></p>
-                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 23 条 · 更新于 2024-06-03)</span></p>
+                                        <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 156 条 · 更新于 2026-06-01)</span></p>
+                                        <p>• 历年资产处置记录 <span class="text-dark-500">(调用 89 条 · 更新于 2026-05-20)</span></p>
+                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 23 条 · 更新于 2026-06-03)</span></p>
                                     </div>
                                 </div>
 
@@ -2618,7 +2665,7 @@
                             <ul class="text-sm text-dark-300 space-y-1">
                                 <li>• 《国有企业资产管理条例》第15条</li>
                                 <li>• 《公租房管理办法》第8条</li>
-                                <li>• 省国资委2024年资产使用规范</li>
+                                <li>• 省国资委2026年资产使用规范</li>
                             </ul>
                         </div>
 
@@ -2637,9 +2684,9 @@
                                         <span class="text-xs font-medium text-emerald-300">知识库来源</span>
                                     </div>
                                     <div class="space-y-1 text-xs text-dark-400">
-                                        <p>• 土地使用权台账 <span class="text-dark-500">(调用 45 条 · 更新于 2024-05-28)</span></p>
-                                        <p>• 公租房/配套用房使用台账 <span class="text-dark-500">(调用 32 条 · 更新于 2024-05-25)</span></p>
-                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 18 条 · 更新于 2024-06-03)</span></p>
+                                        <p>• 土地使用权台账 <span class="text-dark-500">(调用 45 条 · 更新于 2026-05-28)</span></p>
+                                        <p>• 公租房/配套用房使用台账 <span class="text-dark-500">(调用 32 条 · 更新于 2026-05-25)</span></p>
+                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 18 条 · 更新于 2026-06-03)</span></p>
                                     </div>
                                 </div>
 
@@ -2723,9 +2770,9 @@
                         <div class="glass-card rounded-lg p-3">
                             <p class="text-xs font-medium text-blue-300 mb-2">📋 最新政策依据</p>
                             <ul class="text-sm text-dark-300 space-y-1">
-                                <li>• 《关于推进国有企业存量资产盘活的指导意见》(2024)</li>
+                                <li>• 《关于推进国有企业存量资产盘活的指导意见》(2026)</li>
                                 <li>• 《国有资产交易监督管理办法》第22条</li>
-                                <li>• 省国资委2024年资产处置优化通知</li>
+                                <li>• 省国资委2026年资产处置优化通知</li>
                             </ul>
                         </div>
 
@@ -2744,10 +2791,10 @@
                                         <span class="text-xs font-medium text-emerald-300">知识库来源</span>
                                     </div>
                                     <div class="space-y-1 text-xs text-dark-400">
-                                        <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 120 条 · 更新于 2024-06-01)</span></p>
-                                        <p>• 全国资产价值浮动行情 <span class="text-dark-500">(调用 85 条 · 更新于 2024-06-03)</span></p>
-                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 35 条 · 更新于 2024-06-03)</span></p>
-                                        <p>• 资产处置合规法规 <span class="text-dark-500">(调用 28 条 · 更新于 2024-06-02)</span></p>
+                                        <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 120 条 · 更新于 2026-06-01)</span></p>
+                                        <p>• 全国资产价值浮动行情 <span class="text-dark-500">(调用 85 条 · 更新于 2026-06-03)</span></p>
+                                        <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 35 条 · 更新于 2026-06-03)</span></p>
+                                        <p>• 资产处置合规法规 <span class="text-dark-500">(调用 28 条 · 更新于 2026-06-02)</span></p>
                                     </div>
                                 </div>
 
@@ -2981,9 +3028,14 @@
             <div class="px-4 py-4 pb-20 overflow-y-auto scrollbar-hide" style="height: calc(100vh - 120px);">
                 <!-- 智能体列表 -->
                 <div id="marketContentAgent" class="market-tab-content">
+                    <!-- 接入智能体按钮 -->
+                    <button onclick="showUploadModal('agent')" class="w-full glass-card rounded-xl p-3 mb-4 border-dashed border-primary-500/40 hover:bg-primary-500/10 transition-all flex items-center justify-center gap-2 text-primary-400">
+                        <i class="fas fa-plus-circle"></i>
+                        <span class="text-sm">接入智能体</span>
+                    </button>
                     <div class="space-y-3" id="marketAgentList">
-                        <div class="glass-card rounded-xl p-4 hover:border-primary-500/40 transition-all duration-300 cursor-pointer">
-                            <div class="flex items-start gap-3">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-building text-white text-lg"></i>
                                 </div>
@@ -2995,12 +3047,12 @@
                                         <span><i class="fas fa-star mr-1 text-amber-400"></i>4.8</span>
                                     </div>
                                 </div>
-                                <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full">已安装</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('固定资产分析智能体禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('固定资产分析智能体已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('固定资产分析智能体已安装')}">已安装</span>
                             </div>
                         </div>
 
-                        <div class="glass-card rounded-xl p-4 hover:border-primary-500/40 transition-all duration-300 cursor-pointer">
-                            <div class="flex items-start gap-3">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-chart-line text-white text-lg"></i>
                                 </div>
@@ -3012,12 +3064,12 @@
                                         <span><i class="fas fa-star mr-1 text-amber-400"></i>4.6</span>
                                     </div>
                                 </div>
-                                <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full">已安装</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('市场行情预测智能体禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('市场行情预测智能体已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('市场行情预测智能体已安装')}">已安装</span>
                             </div>
                         </div>
 
-                        <div class="glass-card rounded-xl p-4 hover:border-primary-500/40 transition-all duration-300 cursor-pointer">
-                            <div class="flex items-start gap-3">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-balance-scale text-white text-lg"></i>
                                 </div>
@@ -3029,12 +3081,12 @@
                                         <span><i class="fas fa-star mr-1 text-amber-400"></i>4.5</span>
                                     </div>
                                 </div>
-                                <button class="text-xs text-primary-400 bg-primary-500/10 px-3 py-1.5 rounded-full hover:bg-primary-500/20 transition-colors">安装</button>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('合规审计智能体禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('合规审计智能体已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('合规审计智能体已安装')}">已安装</span>
                             </div>
                         </div>
 
-                        <div class="glass-card rounded-xl p-4 hover:border-primary-500/40 transition-all duration-300 cursor-pointer">
-                            <div class="flex items-start gap-3">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-lightbulb text-white text-lg"></i>
                                 </div>
@@ -3046,7 +3098,7 @@
                                         <span><i class="fas fa-star mr-1 text-amber-400"></i>4.4</span>
                                     </div>
                                 </div>
-                                <button class="text-xs text-primary-400 bg-primary-500/10 px-3 py-1.5 rounded-full hover:bg-primary-500/20 transition-colors">安装</button>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #3370FF;" onclick="event.stopPropagation(); if(this.textContent==='安装'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('决策建议智能体已安装')}else if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('决策建议智能体禁用')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('决策建议智能体已安装')}">安装</span>
                             </div>
                         </div>
                     </div>
@@ -3054,6 +3106,11 @@
 
                 <!-- 知识库列表 -->
                 <div id="marketContentKb" class="market-tab-content hidden">
+                    <!-- 构建知识库按钮 -->
+                    <button onclick="showUploadModal('kb')" class="w-full glass-card rounded-xl p-3 mb-4 border-dashed border-emerald-500/40 hover:bg-emerald-500/10 transition-all flex items-center justify-center gap-2 text-emerald-400">
+                        <i class="fas fa-plus-circle"></i>
+                        <span class="text-sm">构建知识库</span>
+                    </button>
                     <div class="mb-4">
                         <h3 class="text-sm font-medium text-dark-300 mb-3 flex items-center gap-2">
                             <i class="fas fa-server text-emerald-400"></i>内部知识库
@@ -3065,7 +3122,7 @@
                                         <h4 class="text-sm font-medium text-white">集团固定资产清单</h4>
                                         <p class="text-xs text-dark-400 mt-1">12,580 条记录</p>
                                     </div>
-                                    <span class="text-xs text-emerald-400">已启用</span>
+                                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('集团固定资产清单禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('集团固定资产清单已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('集团固定资产清单已安装')}">已安装</span>
                                 </div>
                             </div>
                             <div class="glass-card rounded-xl p-4">
@@ -3074,7 +3131,7 @@
                                         <h4 class="text-sm font-medium text-white">土地使用权台账</h4>
                                         <p class="text-xs text-dark-400 mt-1">3,256 条记录</p>
                                     </div>
-                                    <span class="text-xs text-emerald-400">已启用</span>
+                                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('土地使用权台账禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('土地使用权台账已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('土地使用权台账已安装')}">已安装</span>
                                 </div>
                             </div>
                             <div class="glass-card rounded-xl p-4">
@@ -3083,7 +3140,7 @@
                                         <h4 class="text-sm font-medium text-white">资产折旧台账</h4>
                                         <p class="text-xs text-dark-400 mt-1">8,456 条记录</p>
                                     </div>
-                                    <span class="text-xs text-emerald-400">已启用</span>
+                                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('资产折旧台账禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('资产折旧台账已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('资产折旧台账已安装')}">已安装</span>
                                 </div>
                             </div>
                         </div>
@@ -3100,7 +3157,7 @@
                                         <h4 class="text-sm font-medium text-white">全国资产价值行情</h4>
                                         <p class="text-xs text-dark-400 mt-1">实时更新</p>
                                     </div>
-                                    <span class="text-xs text-emerald-400">已启用</span>
+                                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('全国资产价值行情禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('全国资产价值行情已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('全国资产价值行情已安装')}">已安装</span>
                                 </div>
                             </div>
                             <div class="glass-card rounded-xl p-4">
@@ -3109,7 +3166,7 @@
                                         <h4 class="text-sm font-medium text-white">国企资产管理政策</h4>
                                         <p class="text-xs text-dark-400 mt-1">实时更新</p>
                                     </div>
-                                    <span class="text-xs text-emerald-400">已启用</span>
+                                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('国企资产管理政策禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('国企资产管理政策已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('国企资产管理政策已安装')}">已安装</span>
                                 </div>
                             </div>
                             <div class="glass-card rounded-xl p-4">
@@ -3118,7 +3175,7 @@
                                         <h4 class="text-sm font-medium text-white">行业估值标准</h4>
                                         <p class="text-xs text-dark-400 mt-1">年度更新</p>
                                     </div>
-                                    <button class="text-xs text-primary-400 bg-primary-500/10 px-3 py-1.5 rounded-full hover:bg-primary-500/20 transition-colors">添加</button>
+                                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #3370FF;" onclick="event.stopPropagation(); if(this.textContent==='安装'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('行业估值标准已安装')}else if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('行业估值标准禁用')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('行业估值标准已安装')}">安装</span>
                                 </div>
                             </div>
                         </div>
@@ -3134,7 +3191,7 @@
                     </button>
                     <div class="space-y-3">
                         <div class="glass-card rounded-xl p-4">
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-chart-bar text-blue-400"></i>
                                 </div>
@@ -3142,12 +3199,12 @@
                                     <h4 class="text-sm font-medium text-white mb-1">数据图表绘画</h4>
                                     <p class="text-xs text-dark-400">自动生成各类资产数据可视化图表</p>
                                 </div>
-                                <span class="text-xs text-emerald-400">已启用</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('数据图表绘画禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('数据图表绘画已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('数据图表绘画已安装')}">已安装</span>
                             </div>
                         </div>
 
                         <div class="glass-card rounded-xl p-4">
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-chart-line text-emerald-400"></i>
                                 </div>
@@ -3155,12 +3212,12 @@
                                     <h4 class="text-sm font-medium text-white mb-1">资产价值行情预测</h4>
                                     <p class="text-xs text-dark-400">基于市场数据预测资产价值变动</p>
                                 </div>
-                                <span class="text-xs text-emerald-400">已启用</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('资产价值行情预测禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('资产价值行情预测已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('资产价值行情预测已安装')}">已安装</span>
                             </div>
                         </div>
 
                         <div class="glass-card rounded-xl p-4">
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-exchange-alt text-purple-400"></i>
                                 </div>
@@ -3168,12 +3225,12 @@
                                     <h4 class="text-sm font-medium text-white mb-1">多维度数据对比</h4>
                                     <p class="text-xs text-dark-400">按区域、类型、时间等维度对比分析</p>
                                 </div>
-                                <span class="text-xs text-emerald-400">已启用</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('多维度数据对比禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('多维度数据对比已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('多维度数据对比已安装')}">已安装</span>
                             </div>
                         </div>
 
                         <div class="glass-card rounded-xl p-4">
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-shield-alt text-amber-400"></i>
                                 </div>
@@ -3181,12 +3238,12 @@
                                     <h4 class="text-sm font-medium text-white mb-1">合规风险筛查</h4>
                                     <p class="text-xs text-dark-400">自动检测资产管理和处置合规风险</p>
                                 </div>
-                                <span class="text-xs text-emerald-400">已启用</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('合规风险筛查禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('合规风险筛查已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('合规风险筛查已安装')}">已安装</span>
                             </div>
                         </div>
 
                         <div class="glass-card rounded-xl p-4">
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-lightbulb text-rose-400"></i>
                                 </div>
@@ -3194,12 +3251,12 @@
                                     <h4 class="text-sm font-medium text-white mb-1">决策建议生成</h4>
                                     <p class="text-xs text-dark-400">基于分析结果生成优化建议</p>
                                 </div>
-                                <span class="text-xs text-emerald-400">已启用</span>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #3370FF;" onclick="event.stopPropagation(); if(this.textContent==='安装'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('决策建议生成已安装')}else if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('决策建议生成禁用')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('决策建议生成已安装')}">安装</span>
                             </div>
                         </div>
 
-                        <div class="glass-card rounded-xl p-4 hover:border-primary-500/40 transition-all duration-300 cursor-pointer">
-                            <div class="flex items-start gap-3">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-file-alt text-cyan-400"></i>
                                 </div>
@@ -3207,7 +3264,7 @@
                                     <h4 class="text-sm font-medium text-white mb-1">智能报表生成</h4>
                                     <p class="text-xs text-dark-400">自动生成资产分析报表</p>
                                 </div>
-                                <button class="text-xs text-primary-400 bg-primary-500/10 px-3 py-1.5 rounded-full hover:bg-primary-500/20 transition-colors">安装</button>
+                                <span class="text-xs cursor-pointer flex-shrink-0" style="color: #3370FF;" onclick="event.stopPropagation(); if(this.textContent==='安装'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('智能报表生成已安装')}else if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('智能报表生成禁用')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('智能报表生成已安装')}">安装</span>
                             </div>
                         </div>
                     </div>
@@ -3412,12 +3469,12 @@
         </div>
     </div>
 
-    <!-- 上传智能体模态框 -->
+    <!-- 接入智能体模态框 -->
     <div id="uploadAgentModal" class="fixed inset-0 z-[100] hidden">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeUploadModal('agent')"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md max-h-[90vh] overflow-y-auto glass-card rounded-2xl p-6">
             <div class="flex items-center justify-between mb-4">
-                <h3 class="text-lg font-semibold text-white">上传智能体</h3>
+                <h3 class="text-lg font-semibold text-white">接入智能体</h3>
                 <button onclick="closeUploadModal('agent')" class="w-8 h-8 rounded-full bg-dark-700 flex items-center justify-center text-dark-400 hover:text-white transition-colors">
                     <i class="fas fa-times"></i>
                 </button>
@@ -3455,11 +3512,39 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-dark-300 mb-2">基础模型</label>
-                    <select id="agentModel" class="input-dark w-full rounded-xl px-4 py-3 text-white">
-                        <option value="gpt-4">GPT-4</option>
-                        <option value="gpt-3.5">GPT-3.5 Turbo</option>
-                        <option value="claude">Claude</option>
-                        <option value="other">其他</option>
+                    <select id="agentModel" class="input-dark w-full rounded-lg px-3 py-2 text-sm text-dark-400 bg-dark-900/50">
+                        <optgroup label="ByteDance Doubao">
+                            <option value="bytedance/doubao-seed2.0-pro">doubao-seed2.0-pro</option>
+                            <option value="bytedance/doubao-pro-latest">doubao-pro-latest</option>
+                        </optgroup>
+                        <optgroup label="ZhipuAI">
+                            <option value="zhipuai/glm-5.1-pro">glm-5.1-pro</option>
+                            <option value="zhipuai/glm-5-open">glm-5-open</option>
+                        </optgroup>
+                        <optgroup label="DeepSeek">
+                            <option value="deepseek-ai/deepseek-v4-pro">deepseek-v4-pro</option>
+                            <option value="deepseek-ai/deepseek-v4-flash">deepseek-v4-flash</option>
+                        </optgroup>
+                        <optgroup label="MiniMax">
+                            <option value="minimax/mimo-2.5-pro">mimo-2.5-pro</option>
+                            <option value="minimax/mimo-2.5">mimo-2.5</option>
+                        </optgroup>
+                        <optgroup label="Tencent">
+                            <option value="tencent/hunyuan-3.0-pro">hunyuan-3.0-pro</option>
+                            <option value="tencent/hunyuan-3-preview">hunyuan-3-preview</option>
+                        </optgroup>
+                        <optgroup label="OpenAI">
+                            <option value="openai/gpt-5.5">gpt-5.5</option>
+                            <option value="openai/gpt-5.5-pro">gpt-5.5-pro</option>
+                        </optgroup>
+                        <optgroup label="Anthropic">
+                            <option value="anthropic/claude-opus-4.7">claude-opus-4.7</option>
+                            <option value="anthropic/claude-sonnet-4.6">claude-sonnet-4.6</option>
+                        </optgroup>
+                        <optgroup label="Google">
+                            <option value="google/gemini-3.1-pro">gemini-3.1-pro</option>
+                            <option value="google/gemini-3.1-flash">gemini-3.1-flash</option>
+                        </optgroup>
                     </select>
                 </div>
                 <div>
@@ -3471,7 +3556,7 @@
                     <div class="glass-card rounded-xl p-6 border-dashed border-2 border-primary-500/40 text-center cursor-pointer hover:bg-primary-500/10 transition-all">
                         <i class="fas fa-cloud-upload-alt text-3xl text-primary-400 mb-2"></i>
                         <p class="text-sm text-dark-300">点击或拖拽配置文件到此处</p>
-                        <p class="text-xs text-dark-500 mt-1">支持 JSON、YAML 格式</p>
+                        <p class="text-xs text-dark-500 mt-1">支持 JSON、YAML、ZIP 格式</p>
                     </div>
                 </div>
             </div>
@@ -3482,7 +3567,7 @@
                 </button>
                 <button onclick="submitUpload('agent')" class="flex-1 btn-primary text-white font-medium rounded-xl py-3 px-4 flex items-center justify-center gap-2">
                     <i class="fas fa-upload"></i>
-                    <span>上传智能体</span>
+                    <span>接入智能体</span>
                 </button>
             </div>
         </div>
@@ -3526,25 +3611,6 @@
                             </div>
                         </label>
                     </div>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-dark-300 mb-2">数据格式</label>
-                    <select id="kbFormat" class="input-dark w-full rounded-xl px-4 py-3 text-white">
-                        <option value="table">表格数据</option>
-                        <option value="document">文档</option>
-                        <option value="api">API接口</option>
-                        <option value="database">数据库</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-dark-300 mb-2">更新频率</label>
-                    <select id="kbFrequency" class="input-dark w-full rounded-xl px-4 py-3 text-white">
-                        <option value="realtime">实时更新</option>
-                        <option value="daily">每日更新</option>
-                        <option value="weekly">每周更新</option>
-                        <option value="monthly">每月更新</option>
-                        <option value="manual">手动更新</option>
-                    </select>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-dark-300 mb-2">数据文件</label>
@@ -3720,21 +3786,21 @@
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
             const item = document.createElement('div');
-            item.className = 'glass-card rounded-xl p-4 hover:border-primary-500/40 transition-all duration-300 cursor-pointer fade-in';
+            item.className = 'glass-card rounded-xl p-4';
             item.innerHTML = `
-                <div class="flex items-start gap-3">
+                <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br ${randomColor} flex items-center justify-center flex-shrink-0">
                         <i class="fas ${randomIcon} text-white text-lg"></i>
                     </div>
-                    <div class="flex-1">
-                        <h3 class="font-medium text-white mb-1">${name}</h3>
-                        <p class="text-xs text-dark-400 mb-2">${desc || '暂无描述'}</p>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-medium text-white mb-1 truncate">${name}</h3>
+                        <p class="text-xs text-dark-400 mb-2 line-clamp-2">${desc || '暂无描述'}</p>
                         <div class="flex items-center gap-2 text-xs text-dark-500">
                             <span><i class="fas fa-download mr-1"></i>0 使用</span>
                             <span><i class="fas fa-star mr-1 text-amber-400"></i>0.0</span>
                         </div>
                     </div>
-                    <span class="text-xs text-primary-400 bg-primary-500/10 px-2 py-1 rounded-full">新上传</span>
+                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('${name}禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('${name}已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('${name}已安装')}">已安装</span>
                 </div>
             `;
             list.insertBefore(item, list.firstChild);
@@ -3742,18 +3808,30 @@
 
         // 添加知识库到列表
         function addKbToList(name, desc) {
-            const list = document.querySelector('#marketContentKb .mb-4 .space-y-3');
+            // 获取用户选择的知识库类型
+            const kbTypeRadio = document.querySelector('input[name="kbType"]:checked');
+            const kbType = kbTypeRadio ? kbTypeRadio.value : 'internal';
+
+            let list;
+            if (kbType === 'internal') {
+                // 内部知识库列表
+                list = document.querySelector('#marketContentKb .mb-4 .space-y-3');
+            } else {
+                // 外部知识库列表
+                list = document.querySelector('#marketContentKb > div:last-child .space-y-3');
+            }
+
             if (!list) return;
 
             const item = document.createElement('div');
-            item.className = 'glass-card rounded-xl p-4 fade-in';
+            item.className = 'glass-card rounded-xl p-4';
             item.innerHTML = `
                 <div class="flex items-center justify-between">
-                    <div>
-                        <h4 class="text-sm font-medium text-white">${name}</h4>
-                        <p class="text-xs text-dark-400 mt-1">${desc || '暂无描述'}</p>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-sm font-medium text-white truncate">${name}</h4>
+                        <p class="text-xs text-dark-400 mt-1 line-clamp-2">${desc || '暂无描述'}</p>
                     </div>
-                    <span class="text-xs text-primary-400">新上传</span>
+                    <span class="text-xs cursor-pointer flex-shrink-0 ml-3" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('${name}禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('${name}已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('${name}已安装')}">已安装</span>
                 </div>
             `;
             list.insertBefore(item, list.firstChild);
@@ -3772,15 +3850,15 @@
             const item = document.createElement('div');
             item.className = 'glass-card rounded-xl p-4';
             item.innerHTML = `
-                <div class="flex items-start gap-3">
+                <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl ${bgColors[randomIndex]} flex items-center justify-center flex-shrink-0">
                         <i class="fas ${icons[randomIndex]} ${colors[randomIndex]}"></i>
                     </div>
-                    <div class="flex-1">
-                        <h4 class="text-sm font-medium text-white mb-1">${name}</h4>
-                        <p class="text-xs text-dark-400">${desc || '暂无描述'}</p>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-sm font-medium text-white mb-1 truncate">${name}</h4>
+                        <p class="text-xs text-dark-400 line-clamp-2">${desc || '暂无描述'}</p>
                     </div>
-                    <span class="text-xs text-emerald-400">已启用</span>
+                    <span class="text-xs cursor-pointer flex-shrink-0" style="color: #34C759;" onclick="event.stopPropagation(); if(this.textContent==='已安装'){this.textContent='禁用';this.style.color='#FF6B8A';showSuccessToast('${name}禁用')}else if(this.textContent==='禁用'){this.textContent='已安装';this.style.color='#34C759';showSuccessToast('${name}已安装')}else{this.textContent='已安装';this.style.color='#34C759';showSuccessToast('${name}已安装')}">已安装</span>
                 </div>
             `;
             list.insertBefore(item, list.firstChild);
@@ -3821,13 +3899,13 @@
                 title: '知识库更新提醒',
                 time: '1 小时前',
                 unread: true,
-                body: '「国企固定资产管理政策」知识库有新版本更新，请及时同步以确保数据准确性。\n\n更新详情：\n• 知识库名称：国企固定资产管理政策\n• 当前版本：v2.3\n• 最新版本：v2.4\n• 更新内容：新增2024年资产处置指导意见\n\n请及时更新以获取最新政策数据。'
+                body: '「国企固定资产管理政策」知识库有新版本更新，请及时同步以确保数据准确性。\n\n更新详情：\n• 知识库名称：国企固定资产管理政策\n• 当前版本：v2.3\n• 最新版本：v2.4\n• 更新内容：新增2026年资产处置指导意见\n\n请及时更新以获取最新政策数据。'
             },
             {
                 title: '用量报告已生成',
                 time: '昨天 18:00',
                 unread: false,
-                body: '您本月的Token消耗报告已生成。\n\n本月统计：\n• 统计周期：2024年6月\n• 总Token消耗：45.2K\n• 总费用：¥0.85\n• 对话次数：128次\n\n详细报告可在用量账单页面查看。'
+                body: '您本月的Token消耗报告已生成。\n\n本月统计：\n• 统计周期：2026年6月\n• 总Token消耗：45.2K\n• 总费用：¥0.85\n• 对话次数：128次\n\n详细报告可在用量账单页面查看。'
             },
             {
                 title: '新技能插件上线',
@@ -4490,7 +4568,7 @@
                             <ul class="text-sm text-dark-300 space-y-1">
                                 <li>• 《国有企业资产处置管理办法》第12条</li>
                                 <li>• 《行政事业性国有资产管理条例》第28条</li>
-                                <li>• 省国资委2024年资产处置指导意见</li>
+                                <li>• 省国资委2026年资产处置指导意见</li>
                             </ul>
                         </div>`
             },
@@ -4595,9 +4673,9 @@
                         <div class="glass-card rounded-lg p-3">
                             <p class="text-xs font-medium text-blue-300 mb-2">📋 最新政策依据</p>
                             <ul class="text-sm text-dark-300 space-y-1">
-                                <li>• 《关于推进国有企业存量资产盘活的指导意见》(2024)</li>
+                                <li>• 《关于推进国有企业存量资产盘活的指导意见》(2026)</li>
                                 <li>• 《国有资产交易监督管理办法》第22条</li>
-                                <li>• 省国资委2024年资产处置优化通知</li>
+                                <li>• 省国资委2026年资产处置优化通知</li>
                             </ul>
                         </div>`
             }
@@ -4720,10 +4798,10 @@
                                             <span class="text-xs font-medium text-emerald-300">知识库来源</span>
                                         </div>
                                         <div class="space-y-1 text-xs text-dark-400">
-                                            <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 156 条 · 更新于 2024-06-01)</span></p>
-                                            <p>• 土地使用权台账 <span class="text-dark-500">(调用 89 条 · 更新于 2024-05-28)</span></p>
-                                            <p>• 全国资产价值浮动行情 <span class="text-dark-500">(调用 120 条 · 更新于 2024-06-03)</span></p>
-                                            <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 45 条 · 更新于 2024-06-03)</span></p>
+                                            <p>• 集团全量固定资产清单 <span class="text-dark-500">(调用 156 条 · 更新于 2026-06-01)</span></p>
+                                            <p>• 土地使用权台账 <span class="text-dark-500">(调用 89 条 · 更新于 2026-05-28)</span></p>
+                                            <p>• 全国资产价值浮动行情 <span class="text-dark-500">(调用 120 条 · 更新于 2026-06-03)</span></p>
+                                            <p>• 国企固定资产管理政策 <span class="text-dark-500">(调用 45 条 · 更新于 2026-06-03)</span></p>
                                         </div>
                                     </div>
                                     <div class="glass-card rounded-lg p-3">
@@ -5230,6 +5308,68 @@
             document.getElementById('deleteModal').classList.add('hidden');
         }
 
+        // 资源删除相关变量
+        let currentResourceDelete = null;
+        let currentResourceDeleteBtn = null;
+
+        // 显示资源删除确认弹窗
+        function showResourceDeleteModal(resourceName, resourceType, btn) {
+            currentResourceDelete = { name: resourceName, type: resourceType };
+            currentResourceDeleteBtn = btn;
+
+            const typeNames = {
+                'agent': '智能体',
+                'kb': '知识库',
+                'skill': '技能'
+            };
+
+            const message = `确定要删除${typeNames[resourceType] || '资源'}"${resourceName}"吗？删除后将无法恢复。`;
+            document.getElementById('resourceDeleteMessage').textContent = message;
+            document.getElementById('resourceDeleteModal').classList.remove('hidden');
+        }
+
+        // 关闭资源删除确认弹窗
+        function closeResourceDeleteModal() {
+            currentResourceDelete = null;
+            currentResourceDeleteBtn = null;
+            document.getElementById('resourceDeleteModal').classList.add('hidden');
+        }
+
+        // 确认删除资源
+        function confirmResourceDelete() {
+            if (currentResourceDelete && currentResourceDeleteBtn) {
+                const resourceName = currentResourceDelete.name;
+                const resourceType = currentResourceDelete.type;
+                const btn = currentResourceDeleteBtn;
+
+                // 获取资源卡片元素
+                const card = btn.closest('.glass-card');
+
+                // 关闭弹窗
+                closeResourceDeleteModal();
+
+                // 添加删除动画
+                if (card) {
+                    card.style.transition = 'all 0.3s ease';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateX(-100%)';
+                    setTimeout(() => {
+                        card.remove();
+                    }, 300);
+                }
+
+                // 显示删除成功提示
+                const typeNames = {
+                    'agent': '智能体',
+                    'kb': '知识库',
+                    'skill': '技能'
+                };
+                showSuccessToast(`${typeNames[resourceType] || '资源'}"${resourceName}"已删除`);
+            } else {
+                closeResourceDeleteModal();
+            }
+        }
+
         // 确认删除
         function confirmDelete() {
             if (currentDeleteApp) {
@@ -5346,12 +5486,35 @@
         function copyApiKey(btn) {
             const code = btn.parentElement.querySelector('code');
             if (code) {
-                navigator.clipboard.writeText(code.textContent).then(() => {
-                    showSuccessToast('密钥已复制到剪贴板');
-                }).catch(() => {
-                    showSuccessToast('密钥已复制');
-                });
+                // 使用兼容的复制方式
+                const text = code.textContent;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showSuccessToast('密钥已复制到剪贴板');
+                    }).catch(() => {
+                        fallbackCopy(text);
+                    });
+                } else {
+                    fallbackCopy(text);
+                }
             }
+        }
+
+        // 兼容的复制方法
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showSuccessToast('密钥已复制到剪贴板');
+            } catch (err) {
+                showSuccessToast('密钥已复制');
+            }
+            document.body.removeChild(textarea);
         }
 
         // 切换API密钥可见性
