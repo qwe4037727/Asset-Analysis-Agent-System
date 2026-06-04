@@ -4418,6 +4418,136 @@
             icon.classList.toggle('rotate-180');
         }
 
+        // 智能回复内容库
+        const smartReplies = {
+            // 资产价值相关
+            '价值|价格|估值|行情': {
+                title: '📊 资产价值分析',
+                content: `根据最新市场数据，为您分析资产价值情况：
+
+<div class="glass-card rounded-lg p-3 mb-3">
+    <p class="text-xs font-medium text-primary-300 mb-2">📈 价值变动趋势</p>
+    <div class="space-y-2 text-sm text-dark-300">
+        <div class="flex items-center justify-between">
+            <span>土地资产</span>
+            <span class="text-emerald-400">↑ 5.8%</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span>房屋建筑</span>
+            <span class="text-emerald-400">↑ 2.1%</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span>设备设施</span>
+            <span class="text-amber-400">→ 0.3%</span>
+        </div>
+    </div>
+</div>
+
+**建议**：当前市场环境下，建议持有土地和房产资产，设备资产可适时更新换代。`,
+                skills: ['资产价值行情预测', '数据图表绘画']
+            },
+            // 盘点相关
+            '盘点|清查|清点|统计': {
+                title: '📋 资产盘点报告',
+                content: `已完成集团固定资产全面盘点：
+
+<div class="glass-card rounded-lg p-3 mb-3">
+    <p class="text-xs font-medium text-amber-300 mb-2">⚠️ 盘点发现</p>
+    <div class="space-y-2 text-sm text-dark-300">
+        <div class="flex items-center justify-between">
+            <span>闲置资产</span>
+            <span class="text-amber-400">12 项</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span>待报废资产</span>
+            <span class="text-red-400">5 项</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span>正常使用</span>
+            <span class="text-emerald-400">1,245 项</span>
+        </div>
+    </div>
+</div>
+
+**处置建议**：
+1. 闲置厂房建议出租或改造
+2. 老旧设备建议评估后拍卖
+3. 待报废资产按流程申报处理`,
+                skills: ['多维度数据对比分析', '决策建议生成']
+            },
+            // 合规相关
+            '合规|法规|政策|审计|检查': {
+                title: '✅ 合规性核查报告',
+                content: `已完成资产合规性核查：
+
+<div class="glass-card rounded-lg p-3 mb-3">
+    <p class="text-xs font-medium text-emerald-300 mb-2">✅ 核查结果</p>
+    <div class="space-y-2 text-sm text-dark-300">
+        <div class="flex items-center justify-between">
+            <span>土地使用权</span>
+            <span class="text-emerald-400">✓ 合规</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span>房产登记</span>
+            <span class="text-emerald-400">✓ 合规</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span>资产处置流程</span>
+            <span class="text-emerald-400">✓ 合规</span>
+        </div>
+    </div>
+</div>
+
+**政策依据**：
+• 《国有企业资产管理条例》第15条
+• 《国有资产处置管理办法》第22条
+• 省国资委2026年资产处置指导意见`,
+                skills: ['合规风险筛查', '多维度数据对比分析']
+            },
+            // 处置相关
+            '处置|报废|转让|出售|拍卖': {
+                title: '💡 资产处置方案',
+                content: `基于市场分析和政策要求，为您制定处置方案：
+
+<div class="glass-card rounded-lg p-3 mb-3">
+    <p class="text-xs font-medium text-primary-300 mb-2">📋 处置方案</p>
+    <div class="space-y-3 text-sm text-dark-300">
+        <div>
+            <p class="font-medium text-white">A厂区3号厂房</p>
+            <p>建议改造为仓储物流中心</p>
+            <p class="text-emerald-400">预计年收益：¥180万</p>
+        </div>
+        <div>
+            <p class="font-medium text-white">B地块商业用地</p>
+            <p>建议挂牌出让</p>
+            <p class="text-emerald-400">预计收益：¥2,800万</p>
+        </div>
+    </div>
+</div>
+
+**预期收益**：总计 ¥3,478万，较优化前提升 **15%**`,
+                skills: ['资产价值行情预测', '决策建议生成']
+            },
+            // 默认回复
+            'default': {
+                title: '🤖 智能分析助手',
+                content: `收到您的问题，我已进行智能分析：
+
+<div class="glass-card rounded-lg p-3 mb-3">
+    <p class="text-xs font-medium text-primary-300 mb-2">📊 分析结果</p>
+    <p class="text-sm text-dark-300">根据您的问题，我已调用相关知识库和技能进行分析。以下是主要发现：</p>
+</div>
+
+**关键发现**：
+1. 当前资产状况总体良好
+2. 存在部分优化空间
+3. 建议关注市场动态
+
+如需更详细的分析，请提供具体的问题场景或资产类别。`,
+                skills: ['数据图表绘画', '多维度数据对比分析']
+            }
+        };
+
         // 发送消息
         function sendMessage() {
             const input = document.getElementById('chatInput');
@@ -4445,26 +4575,64 @@
             // 滚动到底部
             container.scrollTop = container.scrollHeight;
 
-            // 模拟AI回复
+            // 隐藏常用提问
+            document.getElementById('quickQuestions').classList.add('hidden');
+
+            // 显示AI思考中
+            const aiMsg = document.createElement('div');
+            aiMsg.className = 'flex gap-3 mb-4 fade-in';
+            aiMsg.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-robot text-white text-sm"></i>
+                </div>
+                <div class="chat-assistant px-4 py-3 max-w-[85%]">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-primary-400 rounded-full animate-bounce"></div>
+                        <div class="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                        <div class="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                        <span class="text-sm text-dark-400 ml-2">正在分析中...</span>
+                    </div>
+                </div>
+            `;
+            container.appendChild(aiMsg);
+            container.scrollTop = container.scrollHeight;
+
+            // 根据关键词匹配回复
             setTimeout(() => {
-                const aiMsg = document.createElement('div');
-                aiMsg.className = 'flex gap-3 mb-4 fade-in';
+                let reply = smartReplies.default;
+                for (const [keywords, response] of Object.entries(smartReplies)) {
+                    if (keywords === 'default') continue;
+                    const keywordList = keywords.split('|');
+                    if (keywordList.some(kw => message.includes(kw))) {
+                        reply = response;
+                        break;
+                    }
+                }
+
+                // 更新AI回复
                 aiMsg.innerHTML = `
                     <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center flex-shrink-0">
                         <i class="fas fa-robot text-white text-sm"></i>
                     </div>
                     <div class="chat-assistant px-4 py-3 max-w-[85%]">
-                        <p class="text-sm text-dark-200">正在为您分析"${message.substring(0, 20)}..."，请稍候...</p>
-                        <div class="mt-3 flex items-center gap-2">
-                            <div class="w-2 h-2 bg-primary-400 rounded-full animate-bounce"></div>
-                            <div class="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
-                            <div class="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                        <p class="text-sm font-medium text-primary-300 mb-2">${reply.title}</p>
+                        <div class="text-sm text-dark-200">${reply.content}</div>
+                        <div class="mt-3 pt-3 border-t border-dark-700/50">
+                            <p class="text-xs text-dark-400 mb-2">🔧 调用技能：</p>
+                            <div class="flex flex-wrap gap-2">
+                                ${reply.skills.map(skill => `<span class="text-xs px-2 py-1 rounded-full" style="background: rgba(139, 92, 246, 0.1); color: #8B5CF6;">${skill}</span>`).join('')}
+                            </div>
                         </div>
                     </div>
                 `;
-                container.appendChild(aiMsg);
+
                 container.scrollTop = container.scrollHeight;
-            }, 500);
+
+                // 显示常用提问
+                setTimeout(() => {
+                    document.getElementById('quickQuestions').classList.remove('hidden');
+                }, 1000);
+            }, 1500);
         }
 
         // 快捷问题
