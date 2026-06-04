@@ -1500,19 +1500,59 @@
                                 <div>
                                     <label class="block text-xs text-dark-400 mb-1">API 密钥</label>
                                     <div class="flex items-center gap-2">
-                                        <input type="password" value="sk-xxxxxxxxxxxx" class="input-dark flex-1 rounded-lg px-3 py-2 text-sm text-dark-400 bg-dark-900/50" readonly>
-                                        <button class="px-3 py-2 bg-dark-700 text-dark-400 rounded-lg text-xs hover:text-white transition-colors">
-                                            <i class="fas fa-eye"></i>
+                                        <input id="editApiKey" type="text" value="sk-proj-a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6" class="input-dark flex-1 rounded-lg px-3 py-2 text-sm text-dark-400 bg-dark-900/50">
+                                        <button onclick="toggleEditApiKeyVisibility()" class="px-3 py-2 bg-dark-700 text-dark-400 rounded-lg text-xs hover:text-white transition-colors">
+                                            <i id="editApiKeyIcon" class="fas fa-eye"></i>
                                         </button>
                                     </div>
                                 </div>
                                 <div>
+                                    <label class="block text-xs text-dark-400 mb-1">API 接口地址</label>
+                                    <input id="editApiUrl" type="text" value="https://api.openai.com/v1/chat/completions" class="input-dark w-full rounded-lg px-3 py-2 text-sm text-dark-400 bg-dark-900/50" placeholder="https://api.example.com/v1/chat/completions">
+                                </div>
+                                <div>
                                     <label class="block text-xs text-dark-400 mb-1">模型选择</label>
-                                    <select class="input-dark w-full rounded-lg px-3 py-2 text-sm text-dark-400 bg-dark-900/50">
-                                        <option>GPT-4</option>
-                                        <option>GPT-3.5-Turbo</option>
-                                        <option>Claude-3</option>
+                                    <select id="editModel" class="input-dark w-full rounded-lg px-3 py-2 text-sm text-dark-400 bg-dark-900/50">
+                                        <optgroup label="ByteDance Doubao">
+                                            <option value="bytedance/doubao-seed2.0-pro">doubao-seed2.0-pro</option>
+                                            <option value="bytedance/doubao-pro-latest">doubao-pro-latest</option>
+                                        </optgroup>
+                                        <optgroup label="ZhipuAI">
+                                            <option value="zhipuai/glm-5.1-pro">glm-5.1-pro</option>
+                                            <option value="zhipuai/glm-5-open">glm-5-open</option>
+                                        </optgroup>
+                                        <optgroup label="DeepSeek">
+                                            <option value="deepseek-ai/deepseek-v4-pro">deepseek-v4-pro</option>
+                                            <option value="deepseek-ai/deepseek-v4-flash">deepseek-v4-flash</option>
+                                        </optgroup>
+                                        <optgroup label="MiniMax">
+                                            <option value="minimax/mimo-2.5-pro">mimo-2.5-pro</option>
+                                            <option value="minimax/mimo-2.5">mimo-2.5</option>
+                                        </optgroup>
+                                        <optgroup label="Tencent">
+                                            <option value="tencent/hunyuan-3.0-pro">hunyuan-3.0-pro</option>
+                                            <option value="tencent/hunyuan-3-preview">hunyuan-3-preview</option>
+                                        </optgroup>
+                                        <optgroup label="OpenAI">
+                                            <option value="openai/gpt-5.5">gpt-5.5</option>
+                                            <option value="openai/gpt-5.5-pro">gpt-5.5-pro</option>
+                                        </optgroup>
+                                        <optgroup label="Anthropic">
+                                            <option value="anthropic/claude-opus-4.7">claude-opus-4.7</option>
+                                            <option value="anthropic/claude-sonnet-4.6">claude-sonnet-4.6</option>
+                                        </optgroup>
+                                        <optgroup label="Google">
+                                            <option value="google/gemini-3.1-pro">gemini-3.1-pro</option>
+                                            <option value="google/gemini-3.1-flash">gemini-3.1-flash</option>
+                                        </optgroup>
                                     </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-dark-400 mb-1">Temperature</label>
+                                    <div class="flex items-center gap-3">
+                                        <input id="editTemperature" type="range" min="0" max="2" step="0.1" value="0.7" class="flex-1 h-2 bg-dark-600 rounded-lg appearance-none cursor-pointer">
+                                        <span id="editTemperatureValue" class="text-xs text-dark-400 w-8 text-right">0.7</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1563,7 +1603,7 @@
                     <!-- 左侧：页面标题 -->
                     <div class="flex items-center gap-3 flex-1 min-w-0">
                         <div class="min-w-0">
-                            <h1 class="text-lg font-semibold text-white truncate">我的智能体应用</h1>
+                            <h1 class="text-lg font-semibold text-white truncate">智能体应用管理</h1>
                             <p class="text-xs text-dark-400">XX集团 · 资产管理平台</p>
                         </div>
                     </div>
@@ -3559,37 +3599,11 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-dark-300 mb-2">输入参数</label>
-                    <div id="skillInputs" class="space-y-2">
-                        <div class="flex gap-2">
-                            <input type="text" class="input-dark flex-1 rounded-lg px-3 py-2 text-sm text-white" placeholder="参数名称">
-                            <select class="input-dark rounded-lg px-2 py-2 text-sm text-white">
-                                <option value="string">字符串</option>
-                                <option value="number">数字</option>
-                                <option value="array">数组</option>
-                                <option value="object">对象</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button onclick="addSkillInput()" class="text-xs text-primary-400 hover:text-primary-300 mt-2">
-                        <i class="fas fa-plus mr-1"></i>添加参数
-                    </button>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-dark-300 mb-2">输出格式</label>
-                    <select id="skillOutput" class="input-dark w-full rounded-xl px-4 py-3 text-white">
-                        <option value="json">JSON</option>
-                        <option value="text">文本</option>
-                        <option value="html">HTML</option>
-                        <option value="image">图片</option>
-                    </select>
-                </div>
-                <div>
                     <label class="block text-sm font-medium text-dark-300 mb-2">技能配置文件</label>
                     <div class="glass-card rounded-xl p-6 border-dashed border-2 border-primary-500/40 text-center cursor-pointer hover:bg-primary-500/10 transition-all">
                         <i class="fas fa-cloud-upload-alt text-3xl text-primary-400 mb-2"></i>
                         <p class="text-sm text-dark-300">点击或拖拽技能文件到此处</p>
-                        <p class="text-xs text-dark-500 mt-1">支持 JSON、YAML、Python 格式</p>
+                        <p class="text-xs text-dark-500 mt-1">支持 ZIP 格式</p>
                     </div>
                 </div>
             </div>
@@ -5359,6 +5373,32 @@
         function createNewApiKey() {
             showSuccessToast('新密钥已创建');
         }
+
+        // 切换编辑页面API密钥可见性
+        function toggleEditApiKeyVisibility() {
+            const input = document.getElementById('editApiKey');
+            const icon = document.getElementById('editApiKeyIcon');
+            if (input && icon) {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.className = 'fas fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    icon.className = 'fas fa-eye';
+                }
+            }
+        }
+
+        // 初始化Temperature滑块
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('editTemperature');
+            const valueDisplay = document.getElementById('editTemperatureValue');
+            if (slider && valueDisplay) {
+                slider.addEventListener('input', function() {
+                    valueDisplay.textContent = this.value;
+                });
+            }
+        });
 
         // 显示用户弹窗
         function showUserModal() {
